@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BUAT KATIA</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400;1,9..144,500;1,9..144,600&family=Inter:wght@300;400;500;600&family=Kalam:wght@300;400;700&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <div id="fx-layer" aria-hidden="true"></div>
+
+  <audio id="bgMusic" src="assets/music.mp3" loop></audio>
+  <button id="musicToggle" class="music-btn" aria-label="Toggle music">🎵</button>
+
+  <main id="app">
+
+    <!-- ================= SCENE 1: PASSWORD GATE ================= -->
+    <section id="scene-password" class="scene active">
+      <div class="scene-content">
+        <h1 class="title-script shimmer">DIKUNCI! 🔐</h1>
+        <p class="subtitle">Barangsiapa yang membuka selain kak Tiara Aisyah, maka presidennya prabowo sampai akhir hayatnya!<br />Masukkin passwordnya kink</p>
+
+        <div class="lock-stage">
+          <div class="lock" id="lockIcon">
+            <div class="lock-shackle"></div>
+            <div class="lock-body">
+              <div class="lock-keyhole"></div>
+            </div>
+            <div class="lock-glow"></div>
+          </div>
+        </div>
+
+        <form id="passwordForm" class="password-form" autocomplete="off">
+          <div class="password-input-wrap">
+            <input
+              type="password"
+              id="passwordInput"
+              class="password-input"
+              placeholder="apahayo"
+              autocomplete="off"
+              spellcheck="false"
+            />
+            <button type="button" class="toggle-eye" id="toggleEye" aria-label="Lihat">👁</button>
+          </div>
+          <button type="submit" class="btn-primary">Buka 🔓</button>
+        </form>
+
+        <p id="passwordError" class="password-error hidden">Hmm, udah jelas loh padahal, coba lagi ya 🙈</p>
+
+        <p class="password-hint">
+          💡 Hint: <span id="passwordHint">…</span>
+        </p>
+      </div>
+    </section>
+
+    <!-- ================= SCENE 2: GIFT BOX (PNG) ================= -->
+    <section id="scene-gift" class="scene">
+      <div class="scene-content">
+        <h1 class="title-script shimmer">Barakallahu fii umrik kak!, yang ke 18, eh 19 deng</h1>
+        <p class="subtitle">klik kotaknya buat buka hadiah 🎁</p>
+
+        <div id="gift" class="gift-box-png" role="button" aria-label="Buka hadiah">
+          <div class="gift-rays"></div>
+          <div class="gift-glow"></div>
+
+          <span class="gift-sparkle" style="top: 12%; left: 18%; animation-delay: 0s;">✨</span>
+          <span class="gift-sparkle" style="top: 22%; right: 14%; animation-delay: 0.4s;">✨</span>
+          <span class="gift-sparkle" style="bottom: 20%; left: 12%; animation-delay: 0.8s;">✨</span>
+          <span class="gift-sparkle" style="bottom: 30%; right: 16%; animation-delay: 1.2s;">💫</span>
+          <span class="gift-sparkle" style="top: 48%; left: 6%; animation-delay: 0.6s;">✨</span>
+          <span class="gift-sparkle" style="top: 55%; right: 5%; animation-delay: 1.5s;">💫</span>
+
+          <div class="light-beam"></div>
+
+          <div class="gift-img-wrap">
+            <img
+              src="assets/gift-box.png"
+              alt="Hadiah"
+              class="gift-img"
+              onerror="this.parentElement.classList.add('no-img')"
+            />
+            <span class="gift-emoji" aria-hidden="true">🎁</span>
+          </div>
+
+          <p class="hint" id="giftHint">Klik untuk buka 🎁</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= SCENE 3: VIDEO ================= -->
+    <section id="scene-video" class="scene">
+      <div class="scene-content">
+        <p class="subtitle">wkwk, aku inget banget ini 💌</p>
+        <div class="video-frame">
+          <video id="bdayVideo" controls playsinline preload="metadata">
+            <source src="assets/video.mp4" type="video/mp4" />
+            Browser kamu tidak mendukung video.
+          </video>
+        </div>
+        <button class="btn-primary" data-next="scene-letter-1">Buka Diary ➜</button>
+      </div>
+    </section>
+
+    <!-- ================= SCENE 4: DIARY HALAMAN 1 ================= -->
+    <section id="scene-letter-1" class="scene">
+      <div class="scene-content">
+        <div class="diary" data-diary>
+          <div class="diary-spiral">
+            <span></span><span></span><span></span><span></span>
+            <span></span><span></span><span></span><span></span>
+            <span></span><span></span>
+          </div>
+          <div class="diary-page">
+            <div class="diary-date">Halaman 1 · ✦</div>
+            <h2 class="diary-title">Dear kamu,</h2>
+            <p class="diary-text" data-typewriter>Hai kamu... ✨
+
+Selamat ulang tahun! Hari ini adalah salah satu hari paling spesial sepanjang tahun buat aku. Bukan karena ada kue atau hadiah — tapi karena hari ini, beberapa tahun lalu, dunia memutuskan untuk menghadirkan seseorang yang begitu luar biasa ke dalamnya.
+
+Dan seseorang itu adalah kamu.
+
+Aku masih ingat momen pertama kali kita ngobrol. Nggak ada yang spesial waktu itu — cuma percakapan biasa, cuma tawa kecil, cuma kata-kata random. Tapi entah kenapa, sejak saat itu aku tahu kalau kamu akan jadi seseorang yang berbeda. Dan ternyata aku benar.
+
+Kamu jadi bagian dari cerita yang nggak pernah aku bayangkan sebelumnya. Setiap hari bersamamu — bahkan lewat chat sekadarnya — selalu punya warnanya sendiri.
+
+Terima kasih sudah ada. Terima kasih sudah jadi kamu.</p>
+            <div class="diary-doodle">♡</div>
+            <div class="diary-page-num">— 1 —</div>
+          </div>
+          <div class="diary-bookmark"></div>
+        </div>
+        <button class="btn-primary" data-next="scene-letter-2">Balik halaman ➜</button>
+      </div>
+    </section>
+
+    <!-- ================= SCENE 5: DIARY HALAMAN 2 ================= -->
+    <section id="scene-letter-2" class="scene">
+      <div class="scene-content">
+        <div class="diary" data-diary>
+          <div class="diary-spiral">
+            <span></span><span></span><span></span><span></span>
+            <span></span><span></span><span></span><span></span>
+            <span></span><span></span>
+          </div>
+          <div class="diary-page">
+            <div class="diary-date">Halaman 2 · ✦</div>
+            <h2 class="diary-title">Terima kasih…</h2>
+            <p class="diary-text" data-typewriter>Ada begitu banyak hal yang aku syukuri karena kamu...
+
+Aku bersyukur untuk tawa yang kamu bagi, bahkan di hari-hari yang berat. Untuk cerita random yang kamu kirim tengah malam. Untuk kata "semangat" yang selalu berhasil bikin aku bangkit lagi. Untuk pelukan yang — meski cuma dalam kata — bikin dunia terasa lebih tenang.
+
+Aku bersyukur untuk sabarmu saat aku sedang jadi versi terburuk diriku. Untuk pengertianmu yang nggak pernah habis. Untuk caramu mengingat hal-hal kecil yang aku sebut sekali, lalu kamu lakukan berbulan-bulan kemudian tanpa aku minta.
+
+Aku bersyukur untuk hal-hal sederhana: caramu ketawa, caramu ngambek, caramu cerita hal yang kamu suka dengan mata berbinar.
+
+Kalau ada satu hal yang aku harap dari tahun ini, itu adalah: semoga kamu tahu seberapa berharganya kamu. Bukan cuma buat aku — tapi buat dirimu sendiri.</p>
+            <div class="diary-doodle">✿</div>
+            <div class="diary-page-num">— 2 —</div>
+          </div>
+          <div class="diary-bookmark"></div>
+        </div>
+        <button class="btn-primary" data-next="scene-letter-3">Balik halaman ➜</button>
+      </div>
+    </section>
+
+    <!-- ================= SCENE 6: DIARY HALAMAN 3 ================= -->
+    <section id="scene-letter-3" class="scene">
+      <div class="scene-content">
+        <div class="diary" data-diary>
+          <div class="diary-spiral">
+            <span></span><span></span><span></span><span></span>
+            <span></span><span></span><span></span><span></span>
+            <span></span><span></span>
+          </div>
+          <div class="diary-page">
+            <div class="diary-date">Halaman 3 · ✦</div>
+            <h2 class="diary-title">Untuk tahun baru ini…</h2>
+            <p class="diary-text" data-typewriter>Semoga semua mimpi yang kamu sembunyikan diam-diam di dalam hati itu satu per satu menemukan jalannya untuk jadi nyata.
+
+Semoga setiap pagi kamu bangun dengan alasan untuk tersenyum, dan setiap malam kamu tertidur dengan hati yang tenang. Semoga kesehatan selalu menyertaimu, rezeki selalu memudahkan langkahmu, dan cinta — dalam segala bentuknya — selalu menemukan cara untuk sampai ke kamu.
+
+Dan kalau suatu hari nanti hidup terasa terlalu berat, ingat ya: kamu nggak harus menghadapinya sendiri. Aku ada di sini. Mungkin bukan selalu dalam bentuk yang kamu mau, tapi aku selalu ada.
+
+Selamat ulang tahun, kesayanganku. Semoga tahun ini jadi tahun favoritmu sepanjang hidup.
+
+Terakhir, ada sebuah magis yang membuatmu tak terhapus dari penaku.
+haha, aku rasa ini ga penting sih, tapi gatau kenapa aku pengen nunjukin ajaa</p>
+            <p class="diary-signature" data-signature>— dengan segenap sigma,<br />cecep surencep alias pria sigma itu</p>
+            <div class="diary-page-num">— 3 —</div>
+          </div>
+          <div class="diary-bookmark"></div>
+        </div>
+        <button class="btn-primary" data-next="scene-letter-4">Balik halaman ➜</button>
+      </div>
+    </section>
+
+    <!-- ================= SCENE 7: DIARY HALAMAN 4 — PUISI ================= -->
+    <section id="scene-letter-4" class="scene">
+      <div class="scene-content">
+        <div class="diary diary-poem" data-diary>
+          <div class="diary-spiral">
+            <span></span><span></span><span></span><span></span>
+            <span></span><span></span><span></span><span></span>
+            <span></span><span></span>
+          </div>
+          <div class="diary-page diary-poem-page">
+            <div class="diary-date">Halaman 4 · ✦</div>
+            <h2 class="diary-title">Terakhir</h2>
+            <p class="diary-subtitle">Ada kekuatan magis yang membuatmu tak pernah lepas dari penaku.<br />haha, aku rasa ini ga penting tapi aku ingin menunjukkan ini ke kamu.</p>
+
+            <div class="poem-list" data-photo-reveal>
+
+              <figure class="poem-item" style="--i:0">
+                <div class="poem-photo">
+                  <img src="assets/puisi1.jpg" alt="Puisi I"
+                       onerror="this.src='https://picsum.photos/seed/poem1/600/800'" />
+                </div>
+
+              <figure class="poem-item" style="--i:1">
+                <div class="poem-photo">
+                  <img src="assets/puisi2.jpg" alt="Puisi II"
+                       onerror="this.src='https://picsum.photos/seed/poem2/600/800'" />
+                </div>
+
+              <figure class="poem-item" style="--i:2">
+                <div class="poem-photo">
+                  <img src="assets/puisi3.jpg" alt="Puisi III"
+                       onerror="this.src='https://picsum.photos/seed/poem3/600/800'" />
+                </div>
+
+              <!-- Mau nambah puisi? Copy salah satu <figure> di atas,
+                   ganti --i jadi 3, 4, dst, dan ganti src-nya. -->
+
+            </div>
+
+            <div class="diary-page-num">— 4 —</div>
+          </div>
+          <div class="diary-bookmark"></div>
+        </div>
+        <button class="btn-primary" data-next="scene-mixue">btw, ini ada tambahan nih</button>
+      </div>
+    </section>
+
+    <!-- ================= SCENE 8: MIXUE ================= -->
+    <section id="scene-mixue" class="scene">
+      <div class="scene-content">
+        <h2 class="title-script shimmer">O CHOCO LUCKY SUNDAE WOI! 🍦</h2>
+        <p class="subtitle">KAPAN LAGI DAPET O CHOCO LUCKY SUNDAE VIRTUAL</p>
+
+        <div class="ice-cream-stage">
+          <img
+            src="assets/mixue.png"
+            alt="Es krim Mixue virtual"
+            class="mixue-img"
+            onerror="this.src='https://cdn-icons-png.flaticon.com/512/9385/9385001.png'"
+          />
+          <div class="mixue-label">Mixue Virtual 🍦</div>
+        </div>
+
+        <button id="lickBtn" class="btn-primary">Kalo kamu udah sampai sini, terimakasih telah menghargaiku 🎂</button>
+
+        <p id="finalMsg" class="final-msg hidden">
+          Selamat ulang tahun sekali lagi! <br />
+          Semoga harimu selalu kaya o choco lucky sundae make saus coklat 🍦
+        </p>
+      </div>
+    </section>
+
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
