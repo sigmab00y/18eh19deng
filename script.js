@@ -65,7 +65,7 @@ musicBtn.addEventListener('click', () => {
 // ============================================================
 const SECRET = {
   password: 'akucintaeskrim',                       // 🔑 GANTI PASSWORD DI SINI
-  hint: 'biasanya "akucintaeskrim"',     // 💡 Hint
+  hint: 'passwordnya biasanya "akucintaeskrim"',     // 💡 Hint
   caseSensitive: false,
 };
 
